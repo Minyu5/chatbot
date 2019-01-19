@@ -4,7 +4,7 @@
 </p>
 
 ## Stack
-Front: React.js Back: Node.js
+Front: React.js Back: Node.js + Dialogflow
 1. Clone this repository and `cd` into it.
 2. Execute `npm install`
 3. Run `node server.js`
