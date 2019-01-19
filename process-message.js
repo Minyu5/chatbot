@@ -45,7 +45,7 @@ const processMessage = message => {
       const result = responses[0].queryResult;
       if (result.intent) {
         if (firstInquery && result.intent.displayName === "getSpecials"
-          && result.parameters.fields['specials'].stringValue.includes("specials")) {
+          && result.parameters.fields['specials'].stringValue.includes("special")) {
           firstInquery = false;
           // fetch the special of the day from api
           return getSpecialsInfo().then(response => {
@@ -55,7 +55,7 @@ const processMessage = message => {
             });
           });
         } else if (result.intent.displayName === "getSpecials"
-          && result.parameters.fields['specials'].stringValue.includes("specials")) {
+          && result.parameters.fields['specials'].stringValue.includes("special")) {
           //if it's not first inquery, return the same value
           return pusher.trigger('bot', 'bot-response', {
             message: `Today's special is ${todaySpecial}`,
